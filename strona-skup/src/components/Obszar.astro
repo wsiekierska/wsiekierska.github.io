@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import bydlo from "../assets/bydlo.jpg";
+
+const wojewodztwa = [
+  "Mazowieckie",
+  "Podlaskie",
+  "Warmińsko-mazurskie",
+  "Kujawsko-pomorskie",
+  "Łódzkie",
+  "Lubelskie",
+];
+
+// Placeholdery — podmień na prawdziwe nazwy powiatów / gmin.
+const powiatyGminy = [
+  "Powiat 1", "Powiat 2", "Powiat 3", "Powiat 4", "Powiat 5", "Powiat 6", "Powiat 7", "Powiat 8",
+  "Gmina 1", "Gmina 2", "Gmina 3", "Gmina 4", "Gmina 5", "Gmina 6", "Gmina 7", "Gmina 8",
+];
+
+const chipStyle =
+  "font:600 14px 'Space Grotesk',sans-serif;padding:10px 18px;border:1px solid rgba(245,244,241,.35);border-radius:2px;background:rgba(12,12,13,.3)";
+---
+<section id="obszar" style="position:relative;min-height:100vh;overflow:hidden">
+  <div style="position:absolute;inset:-12% 0;will-change:transform">
+    <Image
+      src={bydlo}
+      alt="Bydło na pastwisku"
+      widths={[900, 1400]}
+      sizes="100vw"
+      loading="lazy"
+      class="obszar-photo bg-image"
+      style="object-position:50% 40%;filter:grayscale(1) contrast(1.06) brightness(.7)"
+    />
+  </div>
+  <div
+    style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.55) 0%,rgba(12,12,13,.35) 40%,rgba(12,12,13,.92) 100%)"
+  >
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,12,13,.7) 0%,transparent 55%)">
+  </div>
+
+  <div
+    class="obszar-content"
+    style="position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px 40px;min-height:100vh;display:flex;flex-direction:column;justify-content:center"
+  >
+    <span data-reveal style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#4d8b00"
+      >OBSZAR DZIAŁANIA</span
+    >
+    <h2
+      data-reveal
+      style="margin:18px 0 0;font:700 clamp(40px,6.5vw,92px)/0.92 'Space Grotesk',sans-serif;letter-spacing:-0.02em;max-width:780px"
+    >
+      Przyjedziemy<br />po Twój żywiec
+    </h2>
+    <p
+      data-reveal
+      style="margin:22px 0 36px;max-width:580px;font:400 17px/1.6 'Space Grotesk',sans-serif;color:rgba(245,244,241,.85)"
+    >
+      Skup bydła z konieczności prowadzimy w całych województwach, w których działamy. Dojeżdżamy prosto do
+      gospodarstwa i odbieramy w dniu zgłoszenia, bez odsyłania na kolejny termin.
+    </p>
+
+    <div
+      data-reveal
+      style="margin-bottom:14px;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;color:rgba(245,244,241,.55)"
+    >
+      WOJEWÓDZTWA
+    </div>
+    <div
+      data-reveal
+      class="obszar-chips"
+      style="display:flex;flex-wrap:wrap;gap:12px;max-width:880px;margin-bottom:40px"
+    >
+      {wojewodztwa.map((w) => <span class="obszar-chip" style={chipStyle}>{w}</span>)}
+    </div>
+
+    <div
+      data-reveal
+      style="margin-bottom:14px;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;color:rgba(245,244,241,.55)"
+    >
+      POWIATY I GMINY
+    </div>
+    <div data-reveal class="marquee">
+      <div class="marquee-track">
+        {powiatyGminy.map((p) => <span class="marquee-chip">{p}</span>)}
+        {/* duplikat dla bezszwowego przewijania */}
+        {powiatyGminy.map((p) => <span class="marquee-chip" aria-hidden="true">{p}</span>)}
+      </div>
+    </div>
+
+    <div
+      data-reveal
+      style="margin-top:46px;padding-top:26px;border-top:1px solid rgba(245,244,241,.14);max-width:760px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap"
+    >
+      <span style="font:500 18px/1.4 'Space Grotesk',sans-serif;color:#f5f4f1"
+        >Twojej okolicy nie ma na liście?
+        <span style="color:rgba(245,244,241,.55)">Zwykle i tak dojedziemy.</span></span
+      >
+      <a
+        href="tel:508869814"
+        class="btn-outline"
+        style="display:inline-flex;align-items:center;gap:10px;font:700 15px 'JetBrains Mono',monospace;color:#f5f4f1;border:1.5px solid rgba(245,244,241,.4);padding:13px 22px;border-radius:2px;text-decoration:none;white-space:nowrap"
+      >
+        <span style="width:7px;height:7px;background:#4d8b00;border-radius:50%"></span>508 869 814
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import bydlo from "../assets/bydlo.jpg";
+---
+<header id="top" style="position:relative;min-height:100vh;overflow:hidden">
+  <div
+    style="position:absolute;inset:0;background:radial-gradient(120% 90% at 12% 16%,rgba(132,195,55,.141) 0%,transparent 46%)"
+  >
+  </div>
+
+  <div class="hero-img" style="position:absolute;right:0;top:0;bottom:0;width:54%;overflow:hidden">
+    <Image
+      src={bydlo}
+      alt="Skup bydła na ubój z konieczności, krowy na pastwisku"
+      widths={[640, 900, 1200]}
+      sizes="54vw"
+      loading="eager"
+      fetchpriority="high"
+      class="bg-image"
+      style="object-position:50% 35%;filter:contrast(1.05) brightness(.9);pointer-events:none"
+    />
+    <div
+      style="position:absolute;inset:0;background:linear-gradient(90deg,#0c0c0d 0%,rgba(12,12,13,.7) 18%,rgba(12,12,13,.15) 48%,transparent 72%)"
+    >
+    </div>
+  </div>
+
+  <div
+    class="hero-content"
+    style="position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:0 40px;min-height:100vh;display:flex;flex-direction:column;justify-content:center"
+  >
+    <div data-reveal style="display:flex;align-items:center;gap:10px;margin-bottom:26px">
+      <span style="width:7px;height:7px;background:#4d8b00;border-radius:50%"></span>
+      <span
+        style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;color:rgba(245,244,241,.72)"
+        >SKUP BYDŁA, MACIOR, KNURÓW, OWIEC I KÓZ</span
+      >
+    </div>
+    <h1
+      data-reveal
+      class="hero-title"
+      style="margin:0;font:700 clamp(42px,7vw,98px)/0.92 'Space Grotesk',sans-serif;letter-spacing:-0.03em"
+    >
+      <span style="display:block">Skup bydła</span>
+      <span style="display:block;color:#4d8b00">na ubój</span>
+      <span
+        class="hero-title-sub"
+        style="display:block;font-size:.52em;font-weight:600;letter-spacing:.02em;color:rgba(245,244,241,.9);margin-top:.12em"
+        >z konieczności</span
+      >
+    </h1>
+    <p
+      data-reveal
+      style="margin:30px 0 0;max-width:540px;font:400 17px/1.6 'Space Grotesk',sans-serif;color:rgba(245,244,241,.82)"
+    >
+      Skup bydła na ubój z konieczności, a także maciory, knury, owce i kozy. Odbiór w dniu zgłoszenia,
+      działamy 7 dni w tygodniu. Płacimy gotówką, wystawiamy fakturę VAT i zajmujemy się wyrejestrowaniem.
+    </p>
+    <div
+      data-reveal
+      class="hero-cta"
+      style="display:flex;align-items:center;gap:24px;margin-top:34px;flex-wrap:wrap"
+    >
+      <a
+        href="tel:508869814"
+        class="btn-primary"
+        style="display:flex;align-items:center;gap:12px;background:#4d8b00;color:#fff;font:700 16px 'Space Grotesk',sans-serif;padding:17px 30px;border-radius:2px;text-decoration:none"
+        >Zadzwoń teraz</a
+      >
+      <div class="hero-phones" style="font:700 22px 'JetBrains Mono',monospace;color:#f5f4f1">
+        508 869 814 <span style="color:rgba(245,244,241,.32)">/</span> 508 230 575
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="position:absolute;left:40px;bottom:28px;display:flex;align-items:center;gap:10px;z-index:3"
+  >
+    <span style="width:30px;height:1px;background:rgba(245,244,241,.35)"></span>
+  </div>
+</header>

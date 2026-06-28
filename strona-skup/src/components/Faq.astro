@@ -1,0 +1,48 @@
+---
+const faqs = [
+  {
+    q: "Czym jest skup bydła na ubój z konieczności?",
+    a: "Dotyczy zdrowego zwierzęcia, które uległo wypadkowi, na przykład złamało kończynę albo doznało urazu przy porodzie, i ze względu na dobrostan musi zostać szybko ubite. Odbieramy takie sztuki bezpośrednio z gospodarstwa.",
+  },
+  {
+    q: "Jak szybko odbieracie zwierzę?",
+    a: "Odbieramy w dniu zgłoszenia. Działamy 7 dni w tygodniu, także w weekendy i święta, bo przy uboju z konieczności liczy się czas.",
+  },
+  {
+    q: "Czy zajmujecie się formalnościami i wyrejestrowaniem?",
+    a: "Tak. Bierzemy na siebie formalności związane ze zgłoszeniem zdarzenia i wyrejestrowaniem zwierzęcia. Wystawiamy fakturę VAT, a płatność realizujemy gotówką przy odbiorze.",
+  },
+  {
+    q: "Jakie zwierzęta skupujecie?",
+    a: "Bydło, czyli krowy, byki, jałówki i cielęta, a także maciory, knury oraz owce i kozy.",
+  },
+  {
+    q: "Na jakim terenie działacie?",
+    a: "Skupujemy w całych województwach: mazowieckim, podlaskim, warmińsko-mazurskim, kujawsko-pomorskim, łódzkim i lubelskim, łącznie z mniejszymi miejscowościami w tych regionach.",
+  },
+];
+---
+<section
+  id="faq"
+  class="faq-section"
+  style="position:relative;max-width:1080px;margin:0 auto;padding:80px 40px 30px"
+>
+  <span data-reveal style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#4d8b00"
+    >NAJCZĘŚCIEJ ZADAWANE PYTANIA</span
+  >
+  <h2
+    data-reveal
+    style="margin:18px 0 44px;font:700 clamp(32px,4.5vw,60px)/1.0 'Space Grotesk',sans-serif;letter-spacing:-0.02em"
+  >
+    Pytania o skup<br />z konieczności
+  </h2>
+
+  {
+    faqs.map((f) => (
+      <details data-reveal class="faq-item">
+        <summary>{f.q}</summary>
+        <p class="faq-a">{f.a}</p>
+      </details>
+    ))
+  }
+</section>

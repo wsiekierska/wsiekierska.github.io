@@ -1,0 +1,94 @@
+---
+// Podgląd wersji desktop w ramce "laptopa".
+// Wymusza szerokość 1460px, żeby na telefonie pokazać cały layout desktopowy.
+// Dostępne pod /preview
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Wymusza na telefonie pokazanie całego "komputerka" na raz i jego pomniejszenie -->
+    <meta name="viewport" content="width=1460" />
+    <title>Skup bydła – podgląd desktop</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #1e1e1e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Górna obudowa i ramka ekranu (MacBook Style) */
+      .computer-frame {
+        width: 1280px;
+        background: #080808;
+        border-radius: 16px 16px 0 0;
+        padding: 24px 24px 0 24px;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+        position: relative;
+      }
+
+      /* Oczko kamery na ramce */
+      .computer-frame::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background: #1c1c1c;
+        border-radius: 50%;
+      }
+
+      /* Wirtualny ekran z działającą stroną */
+      .screen {
+        width: 100%;
+        height: 800px;
+        background: #0c0c0d;
+        border: 1px solid #1a1a1a;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Dolna baza laptopa */
+      .computer-bottom {
+        width: 1280px;
+        height: 24px;
+        background: linear-gradient(to bottom, #0f0f0f, #191919);
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+      }
+
+      .notch {
+        width: 110px;
+        height: 5px;
+        background: #050505;
+        border-radius: 0 0 6px 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="computer-frame">
+      <div class="screen">
+        <iframe src="/" title="Podgląd strony"></iframe>
+      </div>
+    </div>
+    <div class="computer-bottom">
+      <div class="notch"></div>
+    </div>
+  </body>
+</html>
